@@ -1,14 +1,14 @@
 ::ModMakeLindwurmsGreatAgain <- {
 	ID = "mod_make_lindwurms_great_again",
 	Name = "Make Lidwurms Great Again",
-	Version = "0.1.0",
+	Version = "0.1.1",
 }
 
 local mod = ::Hooks.register(::ModMakeLindwurmsGreatAgain.ID, ::ModMakeLindwurmsGreatAgain.Version, ::ModMakeLindwurmsGreatAgain.Name);
 
-mod.require("mod_msu >= 1.2.6", "mod_modern_hooks >= 0.4.0", "mod_legends >= 18.1.0", "mod_sellswords >= 8.2.7");
+mod.require("mod_msu >= 1.2.6", "mod_modern_hooks >= 0.4.0");
 
-mod.queue(">mod_msu", ">mod_legends", ">mod_sellswords", function() {
+mod.queue(">mod_msu", ">mod_modern_hooks", ">mod_legends", ">mod_sellswords", function() {
 	::ModMakeLindwurmsGreatAgain.Mod <- ::MSU.Class.Mod(::ModMakeLindwurmsGreatAgain.ID, ::ModMakeLindwurmsGreatAgain.Version, ::ModMakeLindwurmsGreatAgain.Name);
 	::ModMakeLindwurmsGreatAgain.Mod.Registry.addModSource(::MSU.System.Registry.ModSourceDomain.GitHub, "https://github.com/chopeks/MakeLindwurmsGreatAgain");
 	::ModMakeLindwurmsGreatAgain.Mod.Registry.setUpdateSource(::MSU.System.Registry.ModSourceDomain.GitHub);
